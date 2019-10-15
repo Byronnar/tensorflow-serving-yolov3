@@ -1,6 +1,6 @@
 ## Introduction
 
-为了更好的方便大家使用,我对原tensorflow-yolov3版本，做了一些细节上的改进,如果觉得好用记得star哦，下面是改进细节:
+主要对原tensorflow-yolov3版本做了许多细节上的改进,训练了Visdrone2019数据集，如果觉得好用记得star一下哦，谢谢！下面是改进细节:
 
 1 修改了网络结构，支持了tensorflow-serving部署,自己训练的数据集也可以在线部署,并给出了 docker+yolov3-api测试脚本
 
@@ -39,6 +39,7 @@ $ python image_demo_Chinese.py
 $ python video_demo.py # if use camera, set video_path = 0
 ```
 Chinese image:
+
 ![images](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/demo.jpg)
 
 4. Load the checkpoint file and export the SaveModel object to the `savemodel` folder for TensorFlow serving
@@ -108,57 +109,4 @@ $ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.ta
 $ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
 $ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
 ```
-Extract all of these tars into one directory and rename them, which should have the following basic structure.
-
-```bashrc
-
-VOC           # path:  /home/yang/test/VOC/
-├── test
-|    └──VOCdevkit
-|       └──VOC2007 (from VOCtest_06-Nov-2007.tar)
-└── train
-     └──VOCdevkit
-             └──VOC2007 (from VOCtrainval_06-Nov-2007.tar)
-                     └──VOC2012 (from VOCtrainval_11-May-2012.tar)
-```
-Use the following script to write the paths to the training images and the corresponding annotations to dataset.txt as
-```bashrc
-                     
-$ python scripts/voc_annotation.py --data_path /home/yang/test/VOC
-```
-Then edit your `./core/config.py` to make some necessary configurations
-
-```bashrc
-__C.YOLO.CLASSES                = "./data/classes/voc.names"
-__C.TRAIN.ANNOT_PATH            = "./data/dataset/voc_train.txt"
-__C.TEST.ANNOT_PATH             = "./data/dataset/voc_test.txt"
-```
-One thing I haven't figured out for training is how to prepare the training set for multi-scaling. I thought even with 3 scales (3 grids), only one anchor box in one grid cell is responsible for one object. But in [dataset.ipynb](https://github.com/moon412/tensorflow-yolov3/blob/master/dataset.ipynb), for the image with two persons and a horse (cell 53-56), two scales have object confidence scores equal to 1 for the same objects.
-
-### 2.3 Training from scratch:
-
-```bashrc
-$ python train.py
-$ tensorboard --logdir ./data
-```
-
-### 2.4 Evaluation
-```
-$ python evaluate.py
-$ cd mAP
-$ python main.py -na
-```
-
-### 2.5 Train with other datasets
-Download COCO trainval  and test data
-```
-$ wget http://images.cocodataset.org/zips/train2017.zip
-$ wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip
-$ wget http://images.cocodataset.org/zips/test2017.zip
-$ wget http://images.cocodataset.org/annotations/image_info_test2017.zip 
-```
-
-
-
-# Reference
-[YunYang1994](https://github.com/YunYang1994/tensorflow-yolov3.git)
+Extract all of these tars into one directory and rename them, whi
