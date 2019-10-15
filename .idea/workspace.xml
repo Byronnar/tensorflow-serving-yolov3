@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a189dc2c-a29b-49d3-bb65-37cb40e4391d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LICENSE.fuck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../checkpoint/checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/../checkpoint/checkpoint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../convert_weight.py" beforeDir="false" afterPath="$PROJECT_DIR$/../convert_weight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../convert_weights.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/.ipynb_checkpoints/backbone-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/../core/.ipynb_checkpoints/backbone-checkpoint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/.ipynb_checkpoints/common-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/../core/.ipynb_checkpoints/common-checkpoint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/.ipynb_checkpoints/config-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/../core/.ipynb_checkpoints/config-checkpoint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/.ipynb_checkpoints/dataset-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/../core/.ipynb_checkpoints/dataset-checkpoint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/.ipynb_checkpoints/utils-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/../core/.ipynb_checkpoints/utils-checkpoint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/.ipynb_checkpoints/yolov3-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/../core/.ipynb_checkpoints/yolov3-checkpoint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/backbone.py" beforeDir="false" afterPath="$PROJECT_DIR$/../core/backbone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/../core/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/../core/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../core/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../core/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/yolov3.py" beforeDir="false" afterPath="$PROJECT_DIR$/../core/yolov3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/anchors/.ipynb_checkpoints/basline_anchors-checkpoint.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/anchors/.ipynb_checkpoints/basline_anchors-checkpoint.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/anchors/basline_anchors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/anchors/basline_anchors.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/anchors/coco_anchors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/anchors/coco_anchors.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/classes/voc.names" beforeDir="false" afterPath="$PROJECT_DIR$/../data/classes/voc.names" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/dataset/.ipynb_checkpoints/voc_train-checkpoint.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/dataset/.ipynb_checkpoints/voc_train-checkpoint.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/dataset/voc_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/dataset/voc_test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/dataset/voc_train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/dataset/voc_train.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dataset.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Box-Clustering.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/000000000001.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/000000000001.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/000000000016.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/000000000016.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/000000000019.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/000000000019.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/000000000057.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/000000000057.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/000000000063.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/000000000063.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/000000000069.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/000000000069.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/000000000080.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/000000000080.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/000000000090.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/000000000090.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/000000000106.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/000000000106.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/000000000108.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/000000000108.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/000000000665.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/000000000665.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/000000001024.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/000000001024.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/611_result.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/K-means.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/cat.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/cat_v2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/darknet53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/iou.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/levio.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/levio.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/probability_extraction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/road.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/road.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/sample_computer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/sample_dog.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/sample_eagle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/sample_giraffe.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/sample_giraffe.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/sample_horses.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/sample_horses.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/sample_office.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/sample_office.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/sample_person.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/sample_person.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/sample_scream.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/images/sample_scream.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/images/yolov3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/../evaluate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../freeze_graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/../freeze_graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../image_demo.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../image_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/../image_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../image_demo_Chinese.py" beforeDir="false" afterPath="$PROJECT_DIR$/../image_demo_Chinese.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mnist_sample_image.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mnist_sample_image_v2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../save_model.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../save_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/../save_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scripts/show_bboxes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/show_bboxes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test_tf_serving_api.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../video_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/../video_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_sample_image.json" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/video_demo_Chinese.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image_demo_Chinese.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/anchors_generate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-312">
+              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="298" />
+    <option name="y" value="173" />
+    <option name="width" value="1391" />
+    <option name="height" value="881" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="tensorflow-serving-yolov3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tensorflow-serving-yolov3" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a189dc2c-a29b-49d3-bb65-37cb40e4391d" name="Default Changelist" comment="" />
+      <created>1571151890630</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571151890630</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="70" y="27" width="1850" height="1053" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24958949" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/video_demo_Chinese.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image_demo_Chinese.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/anchors_generate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-312">
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
