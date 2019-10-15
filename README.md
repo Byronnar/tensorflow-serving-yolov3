@@ -1,6 +1,7 @@
 ## Introduction
 
-主要对原tensorflow-yolov3版本做了许多细节上的改进,训练了Visdrone2019数据集，如果觉得好用记得star一下哦，谢谢！下面是改进细节:
+主要对原tensorflow-yolov3版本做了许多细节上的改进,训练了Visdrone2019数据集，如果觉得好用记得star一下哦，谢谢！
+步骤十分详细，特别适合新手入门serving端部署，有什么问题可以提issues,下面是改进细节:
 
 1 修改了网络结构，支持了tensorflow-serving部署,自己训练的数据集也可以在线部署,并给出了 docker+yolov3-api测试脚本
 
