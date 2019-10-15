@@ -101,12 +101,5 @@ Visdrone results：
 Using own datasets to deployment, you need first modify the yolov3.py line 47
 $ python save_model.py
 
-
-### 2.2 Download VOC dataset and prepare the above files
-Download VOC PASCAL trainval and test data
-```bashrc
-$ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
-$ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
-$ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
-```
-Extract all of these tars into one directory and rename them, whi
+### Reference
+[YunYang1994](https://github.com/YunYang1994/tensorflow-yolov3.git)
