@@ -1,5 +1,4 @@
 ## Introduction
-This repo is forked from [YunYang1994](https://github.com/YunYang1994/tensorflow-yolov3.git). The publication for YOLOV3 is [this paper](https://pjreddie.com/media/files/papers/YOLOv3.pdf).
 
 为了更好的方便大家使用,我做了一些细节上的改进,如下:
 1 修改了网络结构，支持了tensorflow-serving部署,自己训练的数据集也可以在线部署,并给出了 docker+yolov3-api测试脚本
@@ -45,6 +44,9 @@ $ docker run -p 8501:8501 --mount type=bind,source=/tmp/yolov3/,target=/models/y
 
 $ cd serving-yolov3
 $ python yolov3_api.py
+
+Results:
+![visdrone](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/visdrone.jpg)
 
 ## Part 2. 详细训练过程
 ### 2.1 Two files are required as follows:
@@ -146,4 +148,5 @@ $ wget http://images.cocodataset.org/annotations/image_info_test2017.zip
 
 
 
-# tensorflow-serving-yolov3
+# Reference
+[YunYang1994](https://github.com/YunYang1994/tensorflow-yolov3.git)
