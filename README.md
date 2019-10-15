@@ -1,6 +1,7 @@
 ## Introduction
 
-为了更好的方便大家使用,我做了一些细节上的改进,如下:
+为了更好的方便大家使用,我对原tensorflow-yolov3版本，做了一些细节上的改进,如果觉得好用记得star哦，下面是改进细节:
+
 1 修改了网络结构，支持了tensorflow-serving部署,自己训练的数据集也可以在线部署,并给出了 docker+yolov3-api测试脚本
 
 2 修改了ulits文件，优化了demo展示,可以支持中文展示,添加了字体
