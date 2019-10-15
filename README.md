@@ -99,9 +99,17 @@ Visdrone results：
 
 # 产生pb文件跟variables文件夹用于部署:
 
-Using own datasets to deployment, you need first modify the yolov3.py line 47
+1 Using own datasets to deployment, you need first modify the yolov3.py line 47
 
 $ python save_model.py
+
+2 将产生的saved model文件夹里面的 `yolov3` 文件夹复制到 `tmp` 文件夹下面，再运行
+```
+$ docker run -p 8501:8501 --mount type=bind,source=/tmp/yolov3/,target=/models/yolov3 -e MODEL_NAME=yolov3 -t tensorflow/serving &
+```
+
+$ cd serving-yolov3
+$ python yolov3_api.py
 
 ### Reference
 [YunYang1994](https://github.com/YunYang1994/tensorflow-yolov3.git)
