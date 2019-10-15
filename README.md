@@ -2,10 +2,15 @@
 
 为了更好的方便大家使用,我做了一些细节上的改进,如下:
 1 修改了网络结构，支持了tensorflow-serving部署,自己训练的数据集也可以在线部署,并给出了 docker+yolov3-api测试脚本
-2 修改了ulits文件，优化了demo展示,可以支持中文展示,添加了字体，
+
+2 修改了ulits文件，优化了demo展示,可以支持中文展示,添加了字体
+
 3 详细的中文注释,代码更加易读,添加了数据敏感性处理,一定程度避免index的错误
+
 4 修改了训练代码，支持其他数据集使用预训练模型了，模型体积减小三分之二，图片视频demo展示完都支持保存到本地,十分容易操作
+
 5 借鉴视频检测的原理,添加了批量图片测试脚本,速度特别快(跟处理视频每一帧一样的速度)
+
 6 添加了易使用的Anchors生成脚本以及各步操作完整的操作流程
 
 
@@ -29,9 +34,12 @@ $ python freeze_graph.py
 
 3. Then you will get the `.pb` file in the root path.,  and run the demo script
 ```bashrc
-$ python image_demo.py
+$ python image_demo_Chinese.py
 $ python video_demo.py # if use camera, set video_path = 0
 ```
+Chinese image:
+![images](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/demo.jpg)
+
 4. Load the checkpoint file and export the SaveModel object to the `savemodel` folder for TensorFlow serving
 ```bashrc
 $ python save_model.py
@@ -45,8 +53,8 @@ $ docker run -p 8501:8501 --mount type=bind,source=/tmp/yolov3/,target=/models/y
 $ cd serving-yolov3
 $ python yolov3_api.py
 
-Results:
-![visdrone](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/visdrone.jpg)
+Api Results:
+![images](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/api.png)
 
 ## Part 2. 详细训练过程
 ### 2.1 Two files are required as follows:
@@ -83,6 +91,9 @@ $ python freeze_graph.py
 Predict:
 modify the image_demo.py
 $ python image_demo.py
+
+Visdrone results：
+![visdrone](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/visdrone.jpg)
 
 # 产生pb文件跟variables文件夹用于部署:
 Using own datasets to deployment, you need first modify the yolov3.py line 47
