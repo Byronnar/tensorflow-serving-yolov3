@@ -27,7 +27,9 @@ $ pip install -r requirements.txt
 2. Load the pre-trained TF checkpoint(`yolov3_coco.ckpt`) and export a .pb file. The checkpoint is provided from the forked repo not from the YOLO author though.
 
 2.1 下载预训练模型放到 checkpoint文件夹里面
+
 百度网盘链接:         https://pan.baidu.com/s/1Sz5c5WoyL31HRVCvGz8_IQ      密码:Q4j1 
+
 谷歌云盘链接:         https://drive.google.com/open?id=1aVnosAJmZYn1QPGL0iJ7Dnd4PTAukSU4
 ```bashrc
 $ cd checkpoint
