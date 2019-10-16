@@ -14,7 +14,7 @@ from core.config import cfg
 
 
 class YoloTrain(object):
-    def __init__(self):
+    def __init__(self):                                 # 从config文件
         self.anchor_per_scale    = cfg.YOLO.ANCHOR_PER_SCALE
         self.classes             = utils.read_class_names(cfg.YOLO.CLASSES)
         self.num_classes         = len(self.classes)
@@ -66,6 +66,22 @@ class YoloTrain(object):
             )
             global_step_update = tf.assign_add(self.global_step, 1.0)
 
+        '''
+        warmup_steps作用：   
+        神经网络在刚开始训练的过程中容易出现loss=NaN的情况，为了尽量避免这个情况，因此初始的学习率设置得很低
+        但是这又使得训练速度变慢了。因此，采用逐渐增大的学习率，从而达到既可以尽量避免出现nan，又可以等训练过程稳定了再增大训练速度的目的。
+        '''
+
+        # with tf.name_scope('loader_and_saver'):
+        #     self.loader = tf.train.Saver(self.net_var)
+        #     self.saver  = tf.train.Saver(tf.global_variables(), max_to_keep=10)
+
+        # 指定需要恢复的参数。层等信息, 位置提前，减少模型体积。
+        with tf.name_scope('loader_and_saver'):
+            variables_to_restore = [v for v in self.net_var if v.name.split('/')[0] not in ['conv_sbbox', 'conv_mbbox', 'conv_lbbox']]
+            self.loader = tf.train.Saver(variables_to_restore)
+            self.saver  = tf.train.Saver(tf.global_variables(), max_to_keep=6)
+
         with tf.name_scope("define_weight_decay"):
             moving_ave = tf.train.ExponentialMovingAverage(self.moving_ave_decay).apply(tf.trainable_variables())
 
@@ -94,10 +110,6 @@ class YoloTrain(object):
                     with tf.control_dependencies([moving_ave]):
                         self.train_op_with_all_variables = tf.no_op()
 
-        with tf.name_scope('loader_and_saver'):
-            self.loader = tf.train.Saver(self.net_var)
-            self.saver  = tf.train.Saver(tf.global_variables(), max_to_keep=10)
-
         with tf.name_scope('summary'):
             tf.summary.scalar("learn_rate",      self.learn_rate)
             tf.summary.scalar("giou_loss",  self.giou_loss)
@@ -122,6 +134,7 @@ class YoloTrain(object):
             print('=> Now it starts to train YOLOV3 from scratch ...')
             self.first_stage_epochs = 0
 
+        # 阶段学习率
         for epoch in range(1, 1+self.first_stage_epochs+self.second_stage_epochs):
             if epoch <= self.first_stage_epochs:
                 train_op = self.train_op_with_frozen_variables
@@ -164,13 +177,11 @@ class YoloTrain(object):
                 test_epoch_loss.append(test_step_loss)
 
             train_epoch_loss, test_epoch_loss = np.mean(train_epoch_loss), np.mean(test_epoch_loss)
-            ckpt_file = "./checkpoint/yolov3_test_loss=%.4f.ckpt" % test_epoch_loss
+            ckpt_file = "./checkpoint/yolov3_train_loss=%.4f.ckpt" % train_epoch_loss
             log_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
             print("=> Epoch: %2d Time: %s Train loss: %.2f Test loss: %.2f Saving %s ..."
                             %(epoch, log_time, train_epoch_loss, test_epoch_loss, ckpt_file))
             self.saver.save(self.sess, ckpt_file, global_step=epoch)
-
-
 
 if __name__ == '__main__': YoloTrain().train()
 
