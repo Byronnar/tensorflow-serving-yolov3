@@ -118,5 +118,8 @@ $ cd serving-yolov3
 
 $ python yolov3_api.py
 
-### Reference
+##  接下来要做的:
+编写一下文档,方便大家windows下运行这个仓库!
+
+## Reference
 [YunYang1994](https://github.com/YunYang1994/tensorflow-yolov3.git)
