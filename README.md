@@ -61,21 +61,21 @@ Api Results:
 ![images](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/api.png)
 
 ## Part 2. 详细训练过程
-# 2.1先准备好数据集,做成VOC2007格式,再通过聚类算法产生anchors（也可以采用默认的anchors，除非你的数据集跟voc相差特别大, 数据集可以用官方VOC2007） 
+2.1先准备好数据集,做成VOC2007格式,再通过聚类算法产生anchors（也可以采用默认的anchors，除非你的数据集跟voc相差特别大, 数据集可以用官方VOC2007） 
 ```
 $ python anchors_generate.py
 
 ```
-# 2.2 产生训练数据txt文件
+2.2 产生训练数据txt文件
 $ python split.py
-#  train.txt 里面应该像这样:
+ train.txt 里面应该像这样:
 xxx/xxx.jpg 18.19,6.32,424.13,421.83,20 323.86,2.65,640.0,421.94,20 
 xxx/xxx.jpg 48,240,195,371,11 8,12,352,498,14
-# image_path x_min, y_min, x_max, y_max, class_id  x_min, y_min ,..., class_id 
-# x_min, y_min etc. corresponds to the data in XML files
+image_path x_min, y_min, x_max, y_max, class_id  x_min, y_min ,..., class_id 
+x_min, y_min etc. corresponds to the data in XML files
 
 
-# 2.3 修改names文件
+2.3 修改names文件
 - [`class.names`]
 
 ```
@@ -87,19 +87,19 @@ toothbrush
 ``` 
 
 Train:
-# 2.4 修改 config.py 文件，主要根据显存大小，注意batch_size，输入尺寸等参数
+2.4 修改 config.py 文件，主要根据显存大小，注意batch_size，输入尺寸等参数
 
 $ python train.py
 $ python freeze_graph.py
 
-# 2.5 预测,修改 路径等相关参数:
+2.5 预测,修改 路径等相关参数:
 modify the image_demo.py
 $ python image_demo.py
 
 Visdrone results：
 ![visdrone](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/visdrone.jpg)
 
-# 2.6 产生pb文件跟variables文件夹用于部署:
+2.6 产生pb文件跟variables文件夹用于部署:
 
 1 Using own datasets to deployment, you need first modify the yolov3.py line 47
 
