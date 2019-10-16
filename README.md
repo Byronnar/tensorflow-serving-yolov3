@@ -17,7 +17,7 @@
 
 
 ## Part 1. demo展示
-1. Clone this repo
+1. 下载这份代码(本算法暂时是在ubuntu1804系统上实现的,后续更新windows版本)
 ```bashrc
 $ git clone https://github.com/byronnar/tensorflow-serving-yolov3.git
 $ cd tensorflow-serving-yolov3
@@ -26,7 +26,7 @@ $ pip install -r requirements.txt
 
 2. Load the pre-trained TF checkpoint(`yolov3_coco.ckpt`) and export a .pb file. The checkpoint is provided from the forked repo not from the YOLO author though.
 
-2.1 下载预训练模型放到 checkpoint文件夹里面
+下载预训练模型放到 checkpoint文件夹里面
 
 百度网盘链接:         https://pan.baidu.com/s/1Sz5c5WoyL31HRVCvGz8_IQ      密码:Q4j1 
 
