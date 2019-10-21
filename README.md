@@ -41,7 +41,8 @@ $ python freeze_graph.py
 
 3. Then you will get the `.pb` file in the root path.,  and run the demo script
 ```bashrc
-$ python image_demo_Chinese.py
+$ python image_demo_Chinese.py             # 中文显示
+$ python image_demo.py                                # 英文显示
 $ python video_demo.py # if use camera, set video_path = 0
 ```
 Chinese image:
