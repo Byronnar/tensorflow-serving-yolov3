@@ -5,8 +5,6 @@
 import tensorflow as tf
 from core.yolov3 import YOLOV3
 
-#pb_file = "./yolov3_coco.pb"
-# added to build SaveModel for TF serving by YZ 08/18/2019
 pb_file = "./yolov3_coco_v3.pb"
 
 ckpt_file = "./checkpoint/yolov3_coco_demo.ckpt"
