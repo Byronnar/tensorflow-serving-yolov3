@@ -119,6 +119,11 @@ $ cd serving-yolov3
 
 $ python yolov3_api.py
 
+### 工业检测mAP：
+
+![tv_map](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/tv_mAP.png)
+
+
 ##  接下来要做的:
 编写一下文档,方便大家windows下运行这个仓库!
 
