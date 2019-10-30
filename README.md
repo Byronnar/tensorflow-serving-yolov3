@@ -9,7 +9,7 @@
 
 3 详细的中文注释,代码更加易读,添加了数据敏感性处理,一定程度避免index的错误
 
-4 修改了训练代码，支持其他数据集使用预训练模型了，模型体积减小三分之二，图片视频demo展示完都支持保存到本地,十分容易操作
+4 修改了训练代码，支持其他数据集使用预训练模型了，模型体积减小二分之一(如果不用指数平滑，可以减小到200多M一个模型，减小三分之二），图片视频demo展示   完都支持保存到本地,十分容易操作
 
 5 借鉴视频检测的原理,添加了批量图片测试脚本,速度特别快(跟处理视频每一帧一样的速度)
 
@@ -63,6 +63,15 @@ $ python yolov3_api.py
 
 Api Results:
 ![images](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/api.png)
+
+6. 模型评估
+修改 config文件里面 的 # TEST options 部分
+```
+$ python evaluate.py
+$ cd mAP
+$ python main.py -na
+```
+
 
 ## Part 2. 详细训练过程
 2.1先准备好数据集,做成VOC2007格式,再通过聚类算法产生anchors（也可以采用默认的anchors，除非你的数据集跟voc相差特别大, 数据集可以用官方VOC2007） 
