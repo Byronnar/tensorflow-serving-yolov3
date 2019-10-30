@@ -12,7 +12,6 @@ from core.dataset import Dataset
 from core.yolov3 import YOLOV3
 from core.config import cfg
 
-
 class YoloTrain(object):
     def __init__(self):                                 # 从config文件
         self.anchor_per_scale    = cfg.YOLO.ANCHOR_PER_SCALE
@@ -72,18 +71,14 @@ class YoloTrain(object):
         但是这又使得训练速度变慢了。因此，采用逐渐增大的学习率，从而达到既可以尽量避免出现nan，又可以等训练过程稳定了再增大训练速度的目的。
         '''
 
-        # with tf.name_scope('loader_and_saver'):
-        #     self.loader = tf.train.Saver(self.net_var)
-        #     self.saver  = tf.train.Saver(tf.global_variables(), max_to_keep=10)
+        with tf.name_scope("define_weight_decay"):
+            moving_ave = tf.train.ExponentialMovingAverage(self.moving_ave_decay).apply(tf.trainable_variables())
 
         # 指定需要恢复的参数。层等信息, 位置提前，减少模型体积。
         with tf.name_scope('loader_and_saver'):
             variables_to_restore = [v for v in self.net_var if v.name.split('/')[0] not in ['conv_sbbox', 'conv_mbbox', 'conv_lbbox']]
             self.loader = tf.train.Saver(variables_to_restore)
-            self.saver  = tf.train.Saver(tf.global_variables(), max_to_keep=6)
-
-        with tf.name_scope("define_weight_decay"):
-            moving_ave = tf.train.ExponentialMovingAverage(self.moving_ave_decay).apply(tf.trainable_variables())
+            self.saver  = tf.train.Saver(tf.global_variables(), max_to_keep=1)
 
         with tf.name_scope("define_first_stage_train"):
             self.first_stage_trainable_var_list = []
@@ -184,7 +179,3 @@ class YoloTrain(object):
             self.saver.save(self.sess, ckpt_file, global_step=epoch)
 
 if __name__ == '__main__': YoloTrain().train()
-
-
-
-
