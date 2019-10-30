@@ -24,9 +24,7 @@ $ cd tensorflow-serving-yolov3
 $ pip install -r requirements.txt
 ```
 
-2. Load the pre-trained TF checkpoint(`yolov3_coco.ckpt`) and export a .pb file. The checkpoint is provided from the forked repo not from the YOLO author though.
-
-下载预训练模型放到 checkpoint文件夹里面
+2. 下载预训练模型放到 checkpoint文件夹里面
 
 百度网盘链接:         https://pan.baidu.com/s/1Sz5c5WoyL31HRVCvGz8_IQ      密码:Q4j1 
 
@@ -49,7 +47,7 @@ Chinese image:
 
 ![images](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/demo.jpg)
 
-4. Load the checkpoint file and export the SaveModel object to the `savemodel` folder for TensorFlow serving
+4. 转化成 可部署的 saved model格式
 ```bashrc
 $ python save_model.py
 ```
@@ -60,6 +58,7 @@ $ docker run -p 8501:8501 --mount type=bind,source=/tmp/yolov3/,target=/models/y
 ```
 
 $ cd serving-yolov3
+
 $ python yolov3_api.py
 
 Api Results:
@@ -98,10 +97,11 @@ $ python train.py
 $ python freeze_graph.py
 
 2.5 预测,修改 路径等相关参数:
-modify the image_demo.py
+修改  image_demo.py等文件
 $ python image_demo.py
 
 Visdrone results：
+
 ![visdrone](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/visdrone.jpg)
 
 2.6 产生pb文件跟variables文件夹用于部署:
@@ -119,7 +119,7 @@ $ cd serving-yolov3
 
 $ python yolov3_api.py
 
-### 工业检测mAP：
+### 工业检测数据集mAP：
 
 ![tv_map](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/tv_mAP.png)
 
