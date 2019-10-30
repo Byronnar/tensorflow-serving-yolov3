@@ -55,12 +55,12 @@ $ python save_model.py
 5. 将产生的saved model文件夹里面的 `yolov3` 文件夹复制到 `tmp` 文件夹下面，再运行
 ```
 $ docker run -p 8501:8501 --mount type=bind,source=/tmp/yolov3/,target=/models/yolov3 -e MODEL_NAME=yolov3 -t tensorflow/serving &
-```
+
 
 $ cd serving-yolov3
 
 $ python yolov3_api.py
-
+```
 Api Results:
 ![images](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/api.png)
 
@@ -80,7 +80,9 @@ $ python anchors_generate.py
 
 ```
 2.2 产生训练数据txt文件
+```
 $ python split.py
+```
  train.txt 里面应该像这样:
 xxx/xxx.jpg 18.19,6.32,424.13,421.83,20 323.86,2.65,640.0,421.94,20 
 xxx/xxx.jpg 48,240,195,371,11 8,12,352,498,14
@@ -101,14 +103,15 @@ toothbrush
 
 Train:
 2.4 修改 config.py 文件，主要根据显存大小，注意batch_size，输入尺寸等参数
-
+```
 $ python train.py
 $ python freeze_graph.py
-
+```
 2.5 预测,修改 路径等相关参数:
 修改  image_demo.py等文件
+```
 $ python image_demo.py
-
+```
 Visdrone results：
 
 ![visdrone](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/visdrone.jpg)
@@ -116,17 +119,20 @@ Visdrone results：
 2.6 产生pb文件跟variables文件夹用于部署:
 
 1 Using own datasets to deployment, you need first modify the yolov3.py line 47
-
+```
 $ python save_model.py
+```
 
 2 将产生的saved model文件夹里面的 `yolov3` 文件夹复制到 `tmp` 文件夹下面，再运行
 ```
 $ docker run -p 8501:8501 --mount type=bind,source=/tmp/yolov3/,target=/models/yolov3 -e MODEL_NAME=yolov3 -t tensorflow/serving &
-```
 
 $ cd serving-yolov3
 
 $ python yolov3_api.py
+```
+
+
 
 ### 工业检测数据集mAP：
 
