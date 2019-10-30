@@ -2,12 +2,8 @@
 # 数据集划分,训练集，测试集，验证集
 from __future__ import division
 import xml.etree.ElementTree as ET
-
-
-# 数据集划分,训练集，测试集，验证集
 import random
-import urllib.request
-import os, tarfile
+import os
 
 
 saveBasePath = r"./VOC2007/ImageSets"              # txt文件保存目录
@@ -19,6 +15,7 @@ val_percent = 0.1                              # 传参
 test_percent = 0.05
 trainval_percent = 0.95
 
+# print(trainval_percent)
 
 tv = int(len(total_xml) * trainval_percent)
 #tr = int(len(total_xml) * train_percent)
@@ -30,10 +27,12 @@ tt = int(len(total_xml) * test_percent)
 trainval = random.sample(range(len(total_xml)), tv)
 train = random.sample(trainval, tr)
 
-print("train size", tr)
-print("val size", ta)
-print("Test size", tt)
+print("训练及图片数量：", tr)
+print("验证集图片数量：", ta)
+print("测试集图片数量：", tt)
 
+# with open('/tmp/VOC2007/split.txt', 'w', encoding='utf-8') as f:
+#     f.write(str(val_percent))
 
 ftrainval = open(os.path.join(saveBasePath, 'Main/trainval.txt'), 'w')
 ftest = open(os.path.join(saveBasePath, 'Main/test.txt'), 'w')
@@ -56,9 +55,7 @@ ftrain.close()
 fval.close()
 ftest.close()
 
-
-sets=[('2007', 'trainval'), ('2007', 'train'), ('2007', 'val'), ('2007', 'test')]
-
+sets=[ ('2007', 'train'), ('2007', 'val'), ('2007', 'test')]
 
 fi=open('./data/classes/vis.names','r')
 txt=fi.readlines()
@@ -66,9 +63,10 @@ voc_class=[]
 for w in txt:
     w=w.replace('\n','')
     voc_class.append(w)
-# print(voc_class)
+print('数据集里面的类别：',voc_class)
 
 classes = voc_class
+
 
 def convert_annotation(year, image_id, list_file):
     in_file = open('./VOC%s/Annotations/%s.xml'%(year, image_id))
@@ -85,9 +83,9 @@ def convert_annotation(year, image_id, list_file):
         b = (int(xmlbox.find('xmin').text), int(xmlbox.find('ymin').text), int(xmlbox.find('xmax').text), int(xmlbox.find('ymax').text))
         list_file.write(" " + ",".join([str(a) for a in b]) + ',' + str(cls_id))
 
+wd = '.'
 
-
-wd = os.getcwd()
+# wd = getcwd()
 for year, image_set in sets:
     image_ids = open('./VOC%s/ImageSets/Main/%s.txt'%(year, image_set)).read().strip().split()
     list_file = open('%s_%s.txt'%(year, image_set), 'w')
