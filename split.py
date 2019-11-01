@@ -27,7 +27,7 @@ tt = int(len(total_xml) * test_percent)
 trainval = random.sample(range(len(total_xml)), tv)
 train = random.sample(trainval, tr)
 
-print("训练及图片数量：", tr)
+print("训练集图片数量：", tr)
 print("验证集图片数量：", ta)
 print("测试集图片数量：", tt)
 
