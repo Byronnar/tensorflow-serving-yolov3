@@ -93,7 +93,7 @@ class Dataset(object):
         if random.random() < 0.5:
             _, w, _ = image.shape
             image = image[:, ::-1, :]
-            bboxes[:, [0,2]] = w - bboxes[:, [2,0]]
+            bboxes[:, [0, 2]] = w - bboxes[:, [2, 0]] - 1
 
         return image, bboxes
 
