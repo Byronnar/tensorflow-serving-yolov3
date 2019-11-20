@@ -1,51 +1,26 @@
 # coding: utf-8
-
-
 from __future__ import division, print_function
-# coding: utf-8
 from __future__ import division
 import xml.etree.ElementTree as ET
+import random
 import os
 
 names_dict = {}
 cnt = 0
-# -*- coding：utf-8 -*-
-# 数据集划分,训练集，测试集，验证集
 
-import xml.etree.ElementTree as ET
-
-# 数据集划分,训练集，测试集，验证集
-import random
-import urllib.request
-import os, tarfile
 
 saveBasePath = r"./VOC2007/ImageSets"              # txt文件保存目录
 total_xml = os.listdir(r'./VOC2007/Annotations')   # 获取标注文件（file_name.xml）
 
-# 划分数据集为（训练，验证，测试集 = 49%,20%,30%）
+# 划分数据集是为了读取图片等数据,以便于拿到聚类结果
 
-val_percent = 0.2                              # 传参
-test_percent = 0.1
-trainval_percent = 0.9
+trainval_percent = 1
 
 # print(trainval_percent)
 
 tv = int(len(total_xml) * trainval_percent)
-#tr = int(len(total_xml) * train_percent)
-ta = int(tv * val_percent)
-tr = int(tv -ta)
-tt = int(len(total_xml) * test_percent)
 
-# 打乱训练文件（洗牌）
 trainval = random.sample(range(len(total_xml)), tv)
-train = random.sample(trainval, tr)
-
-print("train size", tr)
-print("val size", ta)
-print("Test size", tt)
-
-# with open('/tmp/VOC2007/split.txt', 'w', encoding='utf-8') as f:
-#     f.write(str(val_percent))
 
 ftrainval = open(os.path.join(saveBasePath, 'Main/trainval.txt'), 'w')
 ftest = open(os.path.join(saveBasePath, 'Main/test.txt'), 'w')
@@ -56,12 +31,6 @@ for i in range(len(total_xml)):                # 遍历所有 file_name.xml 文�
     name = total_xml[i][:-4] + '\n'            # 获取 file_name
     if i in trainval:
         ftrainval.write(name)
-        if i in train:
-            ftrain.write(name)
-        else:
-            fval.write(name)
-    else:
-        ftest.write(name)
 
 ftrainval.close()
 ftrain.close()
@@ -72,6 +41,7 @@ f = open('./data/classes/vis.names', 'r').readlines()
 
 for line in f:
     line = line.strip()
+    # print(line)
     names_dict[line] = cnt
     cnt += 1
 
@@ -105,6 +75,7 @@ def parse_xml(path):
         ymax = bbox.find('ymax').text
 
         name = str(names_dict[name])
+        # print(name)
         objects.extend([name, xmin, ymin, xmax, ymax])
     if len(objects) > 1:
         return objects
@@ -157,6 +128,7 @@ def gen_train_txt(txt_path):
 
 gen_train_txt('./train.txt')
 gen_test_txt('./val.txt')
+
 
 #***************************************anchors*****************************************************************
 import numpy as np
