@@ -26,7 +26,8 @@ $ pip install -r requirements.txt
 
 2. 下载预训练模型放到 checkpoint文件夹里面
 
-百度网盘链接:         https://pan.baidu.com/s/1Sz5c5WoyL31HRVCvGz8_IQ      密码:Q4j1 
+百度网盘链接:         https://pan.baidu.com/s/1Sz5c5WoyL31HRVCvGz8_IQ      
+密码:Q4j1 
 
 谷歌云盘链接:         https://drive.google.com/open?id=1aVnosAJmZYn1QPGL0iJ7Dnd4PTAukSU4
 ```bashrc
@@ -36,6 +37,10 @@ $ cd ..
 $ python convert_weight.py
 $ python freeze_graph.py
 ```
+补充链接(已经转化好的模型,不需要运行python convert_weight.py):
+
+链接：https://pan.baidu.com/s/12y0vmvKtspWuNMfUHTbPpA                  
+密码：6xa8
 
 3. Then you will get the `.pb` file in the root path.,  and run the demo script
 ```bashrc
