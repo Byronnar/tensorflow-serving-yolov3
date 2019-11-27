@@ -142,7 +142,11 @@ $ python yolov3_api.py
 ```
 
 ##  接下来要做的:
-编写一下文档,方便大家windows下运行这个仓库!
+1 编写一下文档,方便大家windows下运行这个仓库!
+
+2 编写 Tensorflow tiny版本 提高实时性
+
+3 编写 转换成 tensorflow lite 的脚本
 
 ## Reference
 [YunYang1994](https://github.com/YunYang1994/tensorflow-yolov3.git)
