@@ -142,7 +142,7 @@ $ python yolov3_api.py
 ```
 
 ##  接下来要做的:
-1 编写一下文档,方便大家windows下运行这个仓库!
+1 修改backbone ,添加 mobilenetv2 版本
 
 2 编写 Tensorflow tiny版本 提高实时性
 
