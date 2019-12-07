@@ -151,9 +151,8 @@ class YOLOV3(object):
         enclose_right_down = tf.maximum(boxes1[..., 2:], boxes2[..., 2:])
         enclose = tf.maximum(enclose_right_down - enclose_left_up, 0.0)
         enclose_area = enclose[..., 0] * enclose[..., 1]
-        giou = iou - 1.0 * (enclose_area - union_area) / enclose_area
-
-        return giou
+        giou = iou - 1.0 * (enclose_area - union_area) / tf.maximum(enclose_area, 1e-12)
+        # 避免学习率设置高了，出现NAN的情况
 
      def bbox_giou(self, boxes1, boxes2):
 
