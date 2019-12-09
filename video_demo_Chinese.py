@@ -71,7 +71,7 @@ with tf.Session(graph=graph) as sess:
         curr_time = time.time()
         exec_time = curr_time - prev_time
         result = np.asarray(image)
-        info = "time: %.2f ms" %(1000*exec_time)
+        info = "time:" + str(round(1000 * exec_time, 2)) + " ms, FPS: " + str(round((1000 / (1000 * exec_time)), 1))
         cv2.putText(result, text=info, org=(50, 70), fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                     fontScale=1, color=(255, 0, 0), thickness=2)
         cv2.namedWindow("result", cv2.WINDOW_AUTOSIZE)
