@@ -17,7 +17,7 @@
 
 
 ## Part 1. demo展示
-1. 下载这份代码(本算法暂时是在ubuntu1804系统上实现的,后续更新windows版本)
+1. 下载这份代码(本算法暂时是在ubuntu1804系统上实现(windows上理论上也可以使用，去除了命令行参数)
 ```bashrc
 $ git clone https://github.com/byronnar/tensorflow-serving-yolov3.git
 $ cd tensorflow-serving-yolov3
