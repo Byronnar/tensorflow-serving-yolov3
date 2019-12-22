@@ -24,6 +24,10 @@ __C.YOLO.UPSAMPLE_METHOD        = "resize"
 __C.YOLO.ORIGINAL_WEIGHT        = "./checkpoint/yolov3_coco.ckpt"
 __C.YOLO.DEMO_WEIGHT            = "./checkpoint/yolov3_coco_demo.ckpt"
 
+# 定义 Mobilenetv2 backbone 参数
+__C.YOLO.BACKBONE_MOBILE        = True  # 定义mobilenetV2参数
+__C.YOLO.GT_PER_GRID            = 3
+
 # Train options
 __C.TRAIN                       = edict()
 
