@@ -23,13 +23,23 @@ $ git clone https://github.com/byronnar/tensorflow-serving-yolov3.git
 $ cd tensorflow-serving-yolov3
 $ pip install -r requirements.txt
 ```
+注：也可以直接点击 项目右上角 Clone r download 直接下载项目。
 
 2. 下载预训练模型放到 checkpoint文件夹里面
 
-百度网盘链接:      https://pan.baidu.com/s/1Il1ASJq0MN59GRXlgJGAIw
+百度网盘链接:      
+```
+https://pan.baidu.com/s/1Il1ASJq0MN59GRXlgJGAIw
 密码：vw9x
+```
 
-谷歌云盘链接:         https://drive.google.com/open?id=1aVnosAJmZYn1QPGL0iJ7Dnd4PTAukSU4
+谷歌云盘链接:        
+```
+https://drive.google.com/open?id=1aVnosAJmZYn1QPGL0iJ7Dnd4PTAukSU4
+```
+
+再运行下列代码：
+
 ```bashrc
 $ cd checkpoint
 $ tar -xvf yolov3_coco.tar.gz
@@ -38,18 +48,21 @@ $ python convert_weight.py
 $ python freeze_graph.py
 ```
 
+
 补充资源链接(已经转化好的模型,不需要运行python convert_weight.py):
+```
 
 百度网盘链接：https://pan.baidu.com/s/12y0vmvKtspWuNMfUHTbPpA                  
 密码：6xa8
+```
 
-3. Then you will get the `.pb` file in the root path.,  and run the demo script
+3. 转化成.pb文件，运行下列代码：
 ```bashrc
 $ python image_demo_Chinese.py             # 中文显示
 $ python image_demo.py                                # 英文显示
 $ python video_demo.py # if use camera, set video_path = 0
 ```
-Chinese image:
+中文检测结果展示:
 
 ![images](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/demo.jpg)
 
@@ -67,7 +80,7 @@ $ cd serving-yolov3
 
 $ python yolov3_api.py
 ```
-Api Results:
+服务器调用结果展示:
 ![images](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/api.png)
 
 6. 模型评估
@@ -110,7 +123,7 @@ car
 toothbrush
 ``` 
 
-Train:
+正式训练:
 2.4 修改 config.py 文件，主要根据显存大小，注意batch_size，输入尺寸等参数
 ```
 $ python train.py
