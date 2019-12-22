@@ -3,17 +3,19 @@
 主要对原tensorflow-yolov3版本做了许多细节上的改进,训练了Visdrone2019数据集，准确率在87%左右, 如果觉得好用记得star一下哦，谢谢！
 步骤十分详细，特别适合新手入门serving端部署，有什么问题可以提issues,下面是改进细节:
 
-1 修改了网络结构，支持了tensorflow-serving部署,自己训练的数据集也可以在线部署,并给出了 docker+yolov3-api测试脚本
+1. 修改了网络结构，支持了tensorflow-serving部署,自己训练的数据集也可以在线部署,并给出了 docker+yolov3-api测试脚本
 
-2 修改了ulits文件，优化了demo展示,可以支持中文展示,添加了字体
+2. 修改了ulits文件，优化了demo展示,可以支持中文展示,添加了字体
 
-3 详细的中文注释,代码更加易读,添加了数据敏感性处理,一定程度避免index的错误
+3. 详细的中文注释,代码更加易读,添加了数据敏感性处理,一定程度避免index的错误
 
-4 修改了训练代码，支持其他数据集使用预训练模型了，模型体积减小二分之一(如果不用指数平滑，可以减小到200多M一个模型，减小三分之二），图片视频demo展示   完都支持保存到本地,十分容易操作
+4. 修改了训练代码，支持其他数据集使用预训练模型了，模型体积减小二分之一(如果不用指数平滑，可以减小到200多M一个模型，减小三分之二），图片视频demo展    示,都支持保存到本地,十分容易操作
 
-5 借鉴视频检测的原理,添加了批量图片测试脚本,速度特别快(跟处理视频每一帧一样的速度)
+5. 借鉴视频检测的原理,添加了批量图片测试脚本,速度特别快(跟处理视频每一帧一样的速度)
 
-6 添加了易使用的Anchors生成脚本以及各步操作完整的操作流程
+6. 添加了易使用的Anchors生成脚本以及各步操作完整的操作流程
+
+7. 添加了 Mobilenetv2 backbone， 支持训练模型， 模型大小70多M
 
 
 ## Part 1. demo展示
@@ -129,6 +131,11 @@ toothbrush
 $ python train.py
 $ python freeze_graph.py
 ```
+如果使用 mobilenetv2 backbone ，请运行：
+```
+python train_mobilenetv2.py
+```
+
 2.5 预测,修改 路径等相关参数:
 修改  image_demo.py等文件
 ```
@@ -155,11 +162,10 @@ $ python yolov3_api.py
 ```
 
 ##  接下来要做的:
-1 修改backbone ,添加 mobilenetv2 版本
 
-2 编写 Tensorflow tiny版本 提高实时性
+1.写 Tensorflow tiny版本 提高实时性
 
-3 编写 转换成 tensorflow lite 的脚本
+2.写 转换成 tensorflow lite 的脚本
 
 ## Reference
 [YunYang1994](https://github.com/YunYang1994/tensorflow-yolov3.git)
