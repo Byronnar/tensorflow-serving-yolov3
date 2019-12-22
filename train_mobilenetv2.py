@@ -9,7 +9,7 @@ import tensorflow as tf
 import core.utils as utils
 from tqdm import tqdm
 from core.dataset import Dataset
-from core_mobienetv2.yolov3_mobilenetv2 import YOLOV3
+from core.yolov3_mobilenetv2 import YOLOV3
 from core.config import cfg
 
 class YoloTrain(object):
