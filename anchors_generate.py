@@ -37,7 +37,7 @@ ftrain.close()
 fval.close()
 ftest.close()
 
-f = open('./data/classes/vis.names', 'r').readlines()
+f = open('./data/classes/voc_classes.names', 'r').readlines()
 
 for line in f:
     line = line.strip()
@@ -68,15 +68,16 @@ def parse_xml(path):
         if difficult == '1':
             continue
         name = obj.find('name').text
-        bbox = obj.find('bndbox')
-        xmin = bbox.find('xmin').text
-        ymin = bbox.find('ymin').text
-        xmax = bbox.find('xmax').text
-        ymax = bbox.find('ymax').text
+        if name != 'others' and name != 'ignored regions':
+            bbox = obj.find('bndbox')
+            xmin = bbox.find('xmin').text
+            ymin = bbox.find('ymin').text
+            xmax = bbox.find('xmax').text
+            ymax = bbox.find('ymax').text
 
-        name = str(names_dict[name])
-        # print(name)
-        objects.extend([name, xmin, ymin, xmax, ymax])
+            name = str(names_dict[name])
+            # print(name)
+            objects.extend([name, xmin, ymin, xmax, ymax])
     if len(objects) > 1:
         return objects
     else:
@@ -117,6 +118,7 @@ def gen_train_txt(txt_path):
             xml_path = anno_path[i] + '/' + img_name + '.xml'
             objects = parse_xml(xml_path)
             if objects:
+
                 objects[0] = img_path[i] + '/' + img_name + '.jpg'
                 if os.path.exists(objects[0]):
                     objects.insert(0, str(train_cnt))
