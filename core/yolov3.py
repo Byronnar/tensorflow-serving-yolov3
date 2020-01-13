@@ -146,7 +146,7 @@ class YOLOV3(object):
         focal_loss = alpha * tf.pow(tf.abs(target - actual), gamma)
         return focal_loss
 
-     def bbox_giou(self, boxes1, boxes2):
+    def bbox_giou(self, boxes1, boxes2):
 
         boxes1 = tf.concat([boxes1[..., :2] - boxes1[..., 2:] * 0.5,
                             boxes1[..., :2] + boxes1[..., 2:] * 0.5], axis=-1)
