@@ -1,6 +1,6 @@
 ## Introduction
 
-#### 本项目主要对原tensorflow-yolov3版本做了许多细节上的改进,训练了多个数据集，包括Visdrone2019, 安全帽等, 安全帽mAP在98%左右, 推理速度1080上608的尺寸大概25fps.
+#### 本项目主要对原tensorflow-yolov3版本做了许多细节上的改进, 增加了TensorFlow-Serving工程部署, 训练了多个数据集，包括Visdrone2019, 安全帽等, 安全帽mAP在98%左右, 推理速度1080上608的尺寸大概25fps.
 #### 此项目步骤十分详细，特别适合新手入门serving端部署，有什么问题可以提issues, 如果觉得好用记得star一下哦，谢谢！下面是改进细节:
     1. 修改了网络结构，支持了tensorflow-serving部署,自己训练的数据集也可以在线部署, 并给出了 docker+python_client测试脚本, 支持HTTP跟GRPC协议[ 0325 新增 ] 
     
