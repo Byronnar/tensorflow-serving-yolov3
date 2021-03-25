@@ -19,6 +19,8 @@
     8. 增加 ONNX 导出 [ 0325 新增 ] 
     
     9. 增加 GRPC 远程过程调用 Serving 接口 [ 0325 新增 ] 
+    
+    10. 增加训练好的安全帽检测模型,数据集跟模型都在release中可下载 [ 0325 新增 ]
 
 ### Part 1. demo展示
 #### 1. 下载这份代码(本算法暂时是在ubuntu1804系统上实现(windows上理论上也可以使用，去除了命令行参数)
@@ -91,15 +93,7 @@ $ python grpc_client.py
 服务器调用结果展示:
 ![images](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/api.png)
 
-#### 6. 模型评估,计算MAP
-##### 修改 config文件里面 的 # TEST options 部分
-```
-$ python evaluate.py
-$ cd mAP
-$ python main.py -na
-```
-
-#### 7 将pb模型导出为ONNX
+#### 6 将pb模型导出为ONNX
 ```
 python -m tf2onnx.convert --input ./checkpoint/yolov3_coco_v3.pb --inputs input/input_data:0[1,416,416,3] --outputs pred_sbbox/concat_2:0,pred_sbbox/concat_2:0,pred_lbbox/concat_2:0 --output ./checkpoint/yolov3_coco_v3.onnx --verbose --fold_const --opset 11
 
@@ -163,15 +157,24 @@ $ python image_demo_mobilenetv2.py
 
 ![visdrone](https://github.com/Byronnar/tensorflow-serving-yolov3/blob/master/readme_images/demo_helmet.jpg)
 
-#### 2.6 产生pb文件跟variables文件夹用于部署:
+#### 2.6 模型评估,计算MAP
+##### 修改 config文件里面 的 # TEST options 部分
+```
+$ python evaluate.py
+$ python evaluate_mobilenetv2.py
+$ cd mAP
+$ python main.py -na
+```
 
-##### 1 Using own datasets to deployment, you need first modify the yolov3.py line 47
+#### 2.7 产生pb文件跟variables文件夹用于部署:
+
+##### 2.7.1 Using own datasets to deployment, you need first modify the yolov3.py line 47
 ```
 $ python save_model.py
 $ python save_model_mobilenetv2.py
 ```
 
-##### 2 将产生的saved model文件夹里面的 `yolov3` 文件夹复制到 `tmp` 文件夹下面，再运行
+##### 2.7.2 将产生的saved model文件夹里面的 `yolov3` 文件夹复制到 `tmp` 文件夹下面，再运行
 ```
 $ docker run -p 8501:8501 -p 8500:8500 --mount type=bind,source=/tmp/yolov3/,target=/models/yolov3 -e MODEL_NAME=yolov3 -t tensorflow/serving &
 ### 如果需要使用GPU, 请使用Tensorflow-serving-GPU镜像
@@ -185,7 +188,6 @@ GRPC 接口:
 $ python grpc_client.py
 
 ```
-
 
 ###  接下来要做的:
     1. Tensorflow-YOLOV4-TensorRT GPU加速部署
