@@ -37,7 +37,7 @@ ftrain.close()
 fval.close()
 ftest.close()
 
-f = open('./data/classes/vis.names', 'r').readlines()
+f = open( 'data/classes/visdrone.names', 'r' ).readlines()
 
 for line in f:
     line = line.strip()

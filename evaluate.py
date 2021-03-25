@@ -118,36 +118,6 @@ class YoloTest(object):
                         f.write(bbox_mess)
                         print('\t' + str(bbox_mess).strip())
 
-    def voc_2012_test(self, voc2012_test_path):
-
-        img_inds_file = os.path.join(voc2012_test_path, 'ImageSets', 'Main', 'test.txt')
-        with open(img_inds_file, 'r') as f:
-            txt = f.readlines()
-            image_inds = [line.strip() for line in txt]
-
-        results_path = 'results/VOC2012/Main'
-        if os.path.exists(results_path):
-            shutil.rmtree(results_path)
-        os.makedirs(results_path)
-
-        for image_ind in image_inds:
-            image_path = os.path.join(voc2012_test_path, 'JPEGImages', image_ind + '.jpg')
-            image = cv2.imread(image_path)
-
-            print('predict result of %s:' % image_ind)
-            bboxes_pr = self.predict(image)
-            for bbox in bboxes_pr:
-                coor = np.array(bbox[:4], dtype=np.int32)
-                score = bbox[4]
-                class_ind = int(bbox[5])
-                class_name = self.classes[class_ind]
-                score = '%.4f' % score
-                xmin, ymin, xmax, ymax = list(map(str, coor))
-                bbox_mess = ' '.join([image_ind, score, xmin, ymin, xmax, ymax]) + '\n'
-                with open(os.path.join(results_path, 'comp4_det_test_' + class_name + '.txt'), 'a') as f:
-                    f.write(bbox_mess)
-                print('\t' + str(bbox_mess).strip())
-
 
 if __name__ == '__main__': YoloTest().evaluate()
 

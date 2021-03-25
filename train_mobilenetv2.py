@@ -175,13 +175,15 @@ class YoloTrain(object):
                 test_epoch_loss.append(test_step_loss)
 
             train_epoch_loss, test_epoch_loss = np.mean(train_epoch_loss), np.mean(test_epoch_loss)
-            ckpt_file = "./checkpoint/yolov3_train_loss=%.4f.ckpt" % train_epoch_loss
+            ckpt_file = "./checkpoint/yolov3_mobilenetv2.ckpt"  # 固定模型名字
             log_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
             print("=> Epoch: %2d Time: %s Train loss: %.2f Test loss: %.2f Saving %s ..."
                             %(epoch, log_time, train_epoch_loss, test_epoch_loss, ckpt_file))
             self.saver.save(self.sess, ckpt_file, global_step=epoch)
 
-if __name__ == '__main__': YoloTrain().train()
+
+if __name__ == '__main__':
+    YoloTrain().train()
 
 
 

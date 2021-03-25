@@ -63,7 +63,7 @@ voc_class = []
 for w in txt:
     w = w.replace('\n', '')
     voc_class.append(w)
-print('数据集里面的类别：', voc_class)
+print('数据集里面的类别为： ', voc_class)
 classes = voc_class
 
 def convert_annotation(year, image_id, list_file):

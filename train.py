@@ -12,7 +12,6 @@ from core.dataset import Dataset
 from core.yolov3 import YOLOV3
 from core.config import cfg
 
-
 class YoloTrain(object):
     def __init__(self):  # 从config文件获取到一些变量
         self.anchor_per_scale = cfg.YOLO.ANCHOR_PER_SCALE
